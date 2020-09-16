@@ -1,0 +1,565 @@
+
+#trueHeader #logo {
+    background: url(../../images/colors/darkred/logo.png) left bottom no-repeat;
+}
+.top_nav {
+    background-color: #970001;
+}
+.top_nav .right .country_selector {
+    border-left: 1px solid #fff;
+}
+#source {
+    background-color: #970001;
+    border: 1px solid #fff;
+}
+.top_nav .right li {
+    border-left: 1px solid #fff;
+}
+ul.nav > li > a.active {
+    color: #970001;
+    border-bottom: 2px solid #970001;
+}
+ul.nav > li > a:hover {
+    color: #970001;
+}
+ul.nav > li > a.active:hover {
+    color: #970001;
+    border-bottom: 2px solid #970001;
+}
+.tp-caption.offerbadge {
+    background-color: #970001;
+}
+.tp-caption.text2 span {
+    color: #970001;
+}
+.tp-caption.slide_list i {
+    color: #970001;
+}
+.tp-caption.slider_but1 a {
+    background-color: #970001;
+}
+.domain_search_home {
+    background-color: #970001;
+}
+.section_title .big span {
+    color: #970001;
+}
+.section_title_line {
+	background:url(../../images/colors/darkred/title_line1.png) 0 0 no-repeat;
+}
+.domain_search_home #domain-searchform #dsearch {
+    border: 1px solid #970001;
+}
+.domain_search_home .drlist {
+    border: 1px solid #970001;
+}
+.section_holder1 .box {
+    background-color: #ae2021;
+}
+.section_holder1 .box.three {
+    background-color: #ae2021;
+}
+.section_holder1 .box .arrow_up {
+    border-bottom: 20px solid #ae2021;
+}
+.section_holder1 .box .arrow_down {
+    border-top: 20px solid #ae2021;
+}
+.section_holder1 .box .arrow_up.three {
+    border-bottom: 20px solid #ae2021;
+}
+.section_holder1 .box .arrow_down.three {
+    border-top: 20px solid #ae2021;
+}
+.section_holder1 .box.two {
+    background-color: #970001;
+}
+.section_holder1 .box .arrow_up.two {
+    border-bottom: 20px solid #970001;
+}
+.section_holder1 .box .arrow_down.two {
+    border-top: 20px solid #970001;
+}
+.section_title_line.two {
+    background:url(../../images/colors/darkred/title_line2.png) 0 0 no-repeat;
+}
+
+/*hover styles*/	
+
+.section_holder2 .one_fourth:hover .custom-select3 select {
+	color: #fff;
+	background-color: #161616;
+	border: 1px solid #fff;
+}
+.section_holder2 .one_fourth:hover .custom-select3:after {
+	color: #fff;
+	background: #161616;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth:hover .price_table {
+	background-color: #970001;
+}
+.section_holder2 .one_fourth:hover .title {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth:hover .price {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .price {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth:hover .plan_features li {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth:hover .singup_but {
+	color: #272727;
+	background-color: #fff;
+}
+.section_holder2 .one_fourth:hover .arrow_up {
+	border-bottom: 35px solid #970001;
+}
+.section_holder2 .one_fourth:hover .arrow_down {
+	border-top: 35px solid #970001;
+}
+/*active styles*/	
+
+.section_holder2 .one_fourth.active .custom-select3 select {
+	color: #fff;
+	background-color: #161616;
+	border: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .custom-select3:after {
+	color: #fff;
+	background: #161616;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .price_table {
+	background-color: #970001;
+}
+.section_holder2 .one_fourth.active .title {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .price {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .price {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .plan_features li {
+	color: #fff;
+	border-bottom: 1px solid #fff;
+}
+.section_holder2 .one_fourth.active .singup_but {
+	color: #272727;
+	background-color: #fff;
+}
+.section_holder2 .one_fourth.active .arrow_up {
+	border-bottom: 35px solid #970001;
+}
+.section_holder2 .one_fourth.active .arrow_down {
+	border-top: 35px solid #970001;
+}
+.section_holder2 .plan_info .singup_but {
+    background-color: #970001;
+}
+.section_holder3 .left .circle.active {
+    background-color: #970001;
+}
+.section_holder3 .left .circle:hover {
+    background-color: #970001;
+}
+.section_holder3 .right .img_holder .shape {
+	background:url(../../images/colors/darkred/site-img3.png) 0 0 no-repeat;
+}
+.darkred {
+    color: #970001;
+}
+.section_holder3 .right ul.list li i {
+    color: #970001;
+}
+.section_holder4 {
+	background-image: url(../../images/colors/darkred/parallax_bg2.jpg);
+}
+.section_holder5 .cont_holder.active h4 {
+    color: #970001;
+}
+.section_holder5 .cont_holder.active p {
+    color: #970001;
+}
+.section_holder5 .cont_holder.active .icon {
+    background-color: #970001;
+}
+.section_holder5 .cont_holder:hover h4 {
+    color: #970001;
+}
+.section_holder5 .cont_holder:hover p {
+    color: #970001;
+}
+.section_holder5 .cont_holder:hover .icon {
+    background-color: #970001;
+}
+.section_holder6 {
+	background-image: url(../../images/colors/darkred/parallax_bg2.jpg);
+}
+.section_holder7 .clint_holder .img_holder.active {
+    background-color: #970001;
+}
+.section_holder7 .clint_holder .img_holder:hover {
+    background-color: #970001;
+}
+.punchtext {
+    background-color: #970001;
+}
+
+.section_holder8 .affiliates .icon {
+    background-color: #970001;
+}
+.section_holder8 .affiliates:hover h6 {
+    color: #970001;
+}
+.section_holder8 .affiliates.active h6 {
+    color: #970001;
+}
+.tabs3 li.active a {
+    color: #970001;
+}
+.tabs3 li a:hover {
+    color: #970001;
+}
+.section_holder8 .tablist li i {
+    color: #970001;
+}
+.readmore_but3 {
+    background-color: #970001;
+}
+.acc-trigger a {
+	background:url(../../images/colors/darkred/accordion-ico5.png) 14px 13px no-repeat
+}
+
+.acc-trigger a:hover, .acc-trigger.active a, .acc-trigger.active a:hover {
+    color: #970001;
+}
+.section_holder9 {
+    background-color: #970001;
+}
+.footer1 .social_links ul.social_icons li.active a {
+    color: #970001;
+    border: 1px solid #970001;
+}
+.footer1 .social_links ul.social_icons li a:hover {
+    color: #970001;
+    border: 1px solid #970001;
+}
+.email_submit {
+    border: 1px solid #970001;
+    background-color: #970001;
+}
+.scrollup {
+	background-color:#970001;
+}
+
+.top_nav .right li.last {
+    border-right: 1px solid #fff;
+}
+
+
+
+/*---------------------*/
+/*inner pages*/
+/*--------------------*/
+
+#searchsubmit {
+    background-color: #970001;
+}
+.tp-caption.tld_step {
+    background-color: #970001;
+}
+.section_holder1.two .box.active a {
+    background-color: #970001;
+}
+.section_holder4.two {
+	background-image: url(../../images/colors/darkred/parallax_bg2.jpg);
+}
+.table-list3 th {
+    background-color: #970001;
+}
+.section_holder6.two {
+	background-image: url(../../images/colors/darkred/parallax_bg2.jpg);
+}
+.readmore_but5 {
+    background-color: #970001;
+}
+.section_holder10 ul.list li i {
+    color: #970001;
+}
+.section_holder11 .list_holder:hover .icon {
+    border: 1px solid #970001;
+    background-color: #970001;
+}
+.section_holder11 .list_holder .icon {
+    color: #970001;
+}
+.section_holder11 .list_holder:hover h5 {
+    color: #970001;
+}
+.section_holder11 .list_holder.active .icon {
+    border: 1px solid #970001;
+    background-color: #970001;
+}
+.section_holder11 .list_holder.active h5 {
+    color: #970001;
+}
+.section_holder11 .one_third.active h5 {
+    color: #970001;
+}
+
+.section_holder11 .one_third:hover h5 {
+    color: #970001;
+}
+.section_holder12 .one_fourth.active h5 {
+    color: #970001;
+}
+.section_holder12 .one_fourth.active .icon {
+    color: #970001;
+}
+.section_holder12 .one_fourth:hover .icon {
+    color: #970001;
+}
+.section_holder12 .one_fourth:hover h5 {
+    color: #970001;
+}
+.section_holder2.two {
+	background-image: url(../../images/colors/darkred/parallax_bg4.jpg);
+}
+
+.section_holder3 .list_holder.active .icon {
+    background-color: #970001;
+}
+.section_holder3 .list_holder.active h5 {
+    color: #970001;
+}
+.section_holder3 .list_holder:hover .icon {
+    background-color: #970001;
+}
+.section_holder3 .list_holder:hover h5 {
+    color: #970001;
+}
+.tp-caption.text7 {
+    color: #970001;
+}
+.section_holder13 .price {
+    color: #970001;
+}
+.section_holder13 .linux ul.list li i {
+    color: #970001;
+}
+.acc-trigger02 a:hover, .acc-trigger02.active a, .acc-trigger02.active a:hover {
+    background-color: #970001;
+    border: 1px solid #970001;
+}
+.header_medium .bigtext span {
+    color: #970001;
+}
+.header_medium.two .smalltext span {
+    color: #970001;
+}
+.section_holder21 {
+	background-image: url(../../images/colors/darkred/parallax_bg5.jpg);
+}
+.section_holder22 .one_fourth:hover .img_holder {
+    background-color: #970001;
+}
+.section_holder22 .img_holder .social_icon li a:hover {
+    background-color: #970001;
+}
+.section_holder22 .one_fourth.active .img_holder {
+    background-color: #970001;
+}
+.section_holder22 .img_holder .social_icon li a.active {
+    background-color: #970001;
+}
+.section_holder14 .one_fourth:hover .icon {
+    color: #970001;
+    border: 1px solid #970001;
+}
+.section_holder14 .one_fourth:hover h5 {
+    color: #970001;
+}
+.section_holder14 .one_fourth.active h5 {
+    color: #970001;
+}
+.section_holder14 .one_fourth:hover h5 {
+    color: #970001;
+}
+.section_holder14 .one_fourth.active .icon {
+    color: #970001;
+    border: 1px solid #970001;
+}
+.section_holder16 .one_third:hover h5 {
+    color: #970001;
+}
+.section_holder16 .one_third:hover .icon {
+    color: #970001;
+    border: 1px solid #970001;
+}
+.section_holder16 .one_third.active .icon {
+    color: #970001;
+    border: 1px solid #970001;
+}
+.section_holder16 .one_third.active h5 {
+    color: #970001;
+}
+.table-list4 td a {
+    background-color: #970001;
+}
+#searchsubmit2 {
+    background-color: #970001;
+}
+
+.section_holder30 .topic_holder.active {
+    border: 1px solid #970001;
+}
+.section_holder30 .topic_holder:hover {
+    border: 1px solid #970001;
+}
+.section_holder30 .topic_holder.active .icon {
+    color: #970001;
+}
+.section_holder30 .topic_holder.active h4 {
+    color: #970001;
+}
+.section_holder30 .topic_holder:hover .icon {
+    color: #970001;
+}
+.section_holder30 .topic_holder:hover h4 {
+    color: #970001;
+}
+.section_holder30 .topic_holder .text ul.list li a:hover {
+    color: #970001;
+}
+.sidebar_latest_posts .post_holder.active h6 {
+    color: #970001;
+}
+.sidebar_latest_posts .post_holder.active .img {
+    border: 1px solid #970001;
+}
+.categories_holder .list li a:hover {
+    color: #970001;
+}
+.sidebar_latest_posts .post_holder:hover h6 {
+    color: #970001;
+}
+.sidebar_latest_posts .post_holder:hover .img {
+    border: 1px solid #970001;
+}
+.punchline_text_box {
+    border-color: #EEE #EEE #EEE #970001;
+}
+a.knowmore_but {
+    background-color: #970001;
+}
+.products_tags .tags li a {
+    background-color: #970001;
+}
+.sky-form .button.eight {
+    background-color: #970001;
+}
+.section_holder26 .title1 span {
+    color: #970001;
+}
+.portfolio_single a.add_but {
+    background-color: #970001;
+}
+.sidebar_social_icons .social_icons li a:hover {
+    background-color: #970001;
+    border: 1px solid #970001;
+}
+.portfolio_single .project_info span .right .tags li a {
+    background-color: #970001;
+}
+.cbp-l-filters-alignCenter.two .cbp-filter-item:hover {
+    border: 1px solid #970001;
+}
+
+.cbp-l-filters-alignCenter.two .cbp-filter-item-active {
+    border: 1px solid #970001;
+    background-color: #970001;
+}
+.cbp-l-filters-alignRight .cbp-filter-item-active {
+    background-color: #970001;
+    border-color: #970001;
+}
+.section_holder28 .post_holder .date {
+    background-color: #970001;
+}
+.section_holder28 .post_img .hover_box .box_inner .icon:hover {
+    background-color: #970001;
+}
+.pagenation_bottom a.next_prv i {
+    color: #970001;
+}
+.pagenation_bottom a.next_prv:hover {
+    color: #970001;
+}
+.pagenation_bottom .page_number li a.active {
+    background-color: #970001;
+}
+.pagenation_bottom .page_number li a:hover {
+    background-color: #970001;
+}
+.readmore_but6:hover {
+    border: 1px solid #970001;
+    background-color: #970001;
+}
+.readmore_but6 {
+    border: 1px solid #970001;
+}
+.section_holder29 .post_img .date {
+    background-color: #970001;
+}
+.section_holder29 .comment_info:hover {
+    border: 1px solid #970001;
+}
+.section_holder29 .comment_info .right a.more {
+    color: #970001;
+}
+.section_holder29 .comment_info:hover .name {
+    color: #970001;
+}
+.section_holder29 .comment_info .right .date {
+    color: #970001;
+}
+.section_holder29 .comment_info .right a.readmore {
+    background-color: #970001;
+}
+.section_holder29 a.loadmore_but {
+    background-color: #970001;
+}
+.sky-form .button.seven {
+    background-color: #970001;
+}
+.address_info a {
+    color: #970001;
+}
+.sky-form .button {
+    background-color: #970001;
+}
+.section_holder1.two .box:hover a {
+    background-color: #970001;
+}
+.green {
+    color: #970001;
+}
+
+
