@@ -16,40 +16,30 @@ use App\Http\Controllers\AuthController;
 // Route::get('/',[GuestController::class,'index']);
 
 // new routes
-Route::get('/', "PagesController@index");
-Route::get('/iframe', "PagesController@iframe");
+Route::get('/', "PagesController@index")->name('home');
 
-Route::get('/login','PagesController@login');
+Route::get('/login','PagesController@login')->name('login');
 
-Route::post('/register', 'AuthController@register');
-Route::post('/login', 'AuthController@login')->name('login');
+Route::post('/register', 'AuthController@register')->name('registration');
+Route::post('/login', 'AuthController@login')->name('authenticate');
 
-Route::get('/register', 'PagesController@register');
+Route::get('/register', 'PagesController@register')->name('register');
 
-Route::get('/about', 'PagesController@about');
+Route::get('/about', 'PagesController@about')->name('about');
 
-Route::get('/contact', 'PagesController@contact');
+Route::get('/partners', 'PagesController@partners')->name('partners');
 
-Route::get('/faq', 'PagesController@faq');
+Route::get('/faq', 'PagesController@faq')->name('faq');
 
-Route::get('/history','PagesController@history');
+Route::get('/investors','PagesController@investors')->name('investors');
+Route::get('/rules','PagesController@rules')->name('rules');
+Route::get('/support','PagesController@support')->name('support');
 
 Route::post('/password/reset', 'PasswordResetController@sendResetLink');
 Route::post('/reset', 'PasswordResetController@Reset');
 Route::get('/reset', 'PasswordResetController@showResetForm');
-Route::get('/password/reset', 'PagesController@passwordReset');
+Route::get('/password/reset', 'PagesController@passwordReset')->name('password.reset');
 
-Route::get('/terms&conditions', 'PagesController@terms_and_conditions');
-
-Route::get('/news', 'PagesController@news');
-
-Route::get('/ref_link', function(){
-    return view('ref_link');
-});
-
-Route::get('/ref_link', function(){
-    return view('ref_link');
-});
 
 Route::middleware('auth')->prefix('/user')->group(function(){
     Route::get('/user_dashboard', 'UserController@Dashboard');

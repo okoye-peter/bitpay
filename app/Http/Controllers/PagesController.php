@@ -8,60 +8,51 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view('index2');
+        return view('index');
     }
 
     public function login()
     {
-        return view('login2');
+        return view('login');
     }
 
     public function register()
     {
-        return view('register2');
+        return view('register');
     }
 
     public function about()
     {
-        return view('about2');
+        return view('about');
     }
 
-    public function contact()
+    public function rules()
     {
-        return view('contact2');
+        return view('rules');
     }
 
-    public function history()
+    public function partners()
     {
-        return view('history');
+        return view('partners');
     }
 
-    public function terms_and_conditions()
+    public function investors()
     {
-        return view('t&c2');
+        return view('investors');
     }
 
-    public function news()
+    public function support()
     {
-        return view('company_news');
+        return view('support');
     }
 
     public function passwordReset()
     {
-        return view('passwordReset');
+        return view('password_reset');
     }
 
     public function faq()
     {
-        return view('faq2');
-    }
-
-    public function iframe()
-    {
-        return view('deposit_iframe');
-    }
-    public function deposit_save()
-    {
-        return view('deposit_saved');
+        return view('faq');
     }
 }

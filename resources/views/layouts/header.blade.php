@@ -1,416 +1,175 @@
-<script type="text/javascript" src="{{ asset('asset2/code.jquery.com/jquery-1.8.2.js') }}"></script>
-<style type="text/css">
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    filter: alpha(opacity=70);
-    -moz-opacity: 0.7;
-    -khtml-opacity: 0.7;
-    opacity: 0.7;
-    z-index: 100;
-    display: none;
-  }
-
-
-  .cnt223 a {
-    text-decoration: none;
-  }
-
-  .popup {
-    width: 100%;
-    margin: 0 auto;
-    display: none;
-    position: fixed;
-    z-index: 101;
-  }
-
-  .cnt223 {
-    min-width: 600px;
-    width: 600px;
-    min-height: 150px;
-    margin: 100px auto;
-    background: #f3f3f3;
-    position: relative;
-    z-index: 103;
-    padding: 15px 35px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #000;
-  }
-
-  .cnt223 p {
-    clear: both;
-    color: #555555;
-    /* text-align: justify; */
-    font-size: 20px;
-    font-family: sans-serif;
-  }
-
-  .cnt223 p a {
-    color: #d91900;
-    font-weight: bold;
-  }
-
-  .cnt223 .x {
-    float: right;
-    height: 35px;
-    left: 22px;
-    position: relative;
-    top: -25px;
-    width: 34px;
-  }
-
-  .cnt223 .x:hover {
-    cursor: pointer;
-  }
-
-  .invalid-feedback{    
-    font-size: 11px;
-    font-weight: 100;
-    font-style: italic;
-    color: red;
-  }
-
-  input.inpts.is-invalid{
-    border: 1px solid red;
-  }
-
-  .alert {
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 1rem;
-    border: 1px solid transparent;
-    border-radius: .25rem;
-  }
-
-  .alert-success {
-    color: #155724;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    margin: 0em 4em;
-  }
-  
-  .alert.alert-danger{
-    color: #721c24;
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    margin: 0em 4em;
-    border-radius: 0.4em
-  }
-  .alert-dismissible .close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: .75rem 1.25rem;
-    color: inherit;
-    border: 0;
-    background: transparent;
-    font-size: 20px;
-    font-weight: 600;
-  }
-
-  form .logoutbtn{
-    background: transparent;
-    border: 0;
-    margin: 1.5em 0em;
-    font-size: 16px;
-  }
-</style>
-<!-- <script type='text/javascript'>
-  $(function () {
-    var overlay = $('<div id="overlay"></div>');
-    overlay.show();
-    overlay.appendTo(document.body);
-    $('.popup').show();
-    $('.close').click(function () {
-      $('.popup').hide();
-      overlay.appendTo(document.body).remove();
-      return false;
-    });
-
-
-
-
-    $('.x').click(function () {
-      $('.popup').hide();
-      overlay.appendTo(document.body).remove();
-      return false;
-    });
-  });
-</script> -->
-<div class='popup'>
-  <div class='cnt223'>
-    <h2>EXCLUSIVE BONUS!! JUST A LIMITED TIME</h2>
-    <br />
-    SPECIAL PACKAGE..!!
-    A one time deposit of $500 will qualify you to earn an instant 250% of the deposit just after the deposit
-    confirmation.
-
-    All you need to do is to make a one time deposit of $500 and you will get 250% of your deposit total $1250 in
-    24hours time.
-    Note: all deposits are to be made using the company’s wallet address
-
-    Thanks for your cooperation
-    <br />
-    <br />
-    <a href='#' class='close'>Close</a>
-    </p>
-  </div>
-</div>
-
-<!doctype html>
-<html lang="en-gb">
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <!--<![endif]-->
 
 
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
 <head>
-  <title>BIT-PAYCOIN</title>
-  <meta charset="utf-8">
-  <!-- Meta -->
-  <meta name="keywords" content="" />
-  <meta name="author" content="">
-  <meta name="robots" content="" />
-  <meta name="description" content="" />
 
-  <!-- this styles only adds some repairs on idevices  -->
-  <meta name="viewport" content="width=1280px">
+	<meta charset="utf-8">
 
-  <!-- Favicon -->
+	<!-- CSRF Token -->
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <link href="{{ asset('asset2/sdata/images/favicon.ico') }}" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
+	<title>@yield('title')</title>
+	<meta name="description" content="">
 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1280">
 
-  <!-- Google fonts - witch you want to use - (rest you can just remove) -->
-  <link
-    href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic'
-    rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet'
-    type='text/css'>
+	<!-- Template Basic Images Start -->
+	<!--  -->
+	<meta property="og:image" content="{{ asset('assets/path/to/image.html') }}">
+	<meta property="og:title" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:locale" content="ru_RU" />
+	<meta property="og:type" content="website" />
 
-  <!--[if lt IE 9]>
-<script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-
-  <!-- ######### CSS STYLES ######### -->
-
-  <link rel="stylesheet" href="{{asset('asset2/sdata/css/reset.css')}}" type="text/css" />
-  <link rel="stylesheet" href="{{asset('asset2/sdata/css/style.css')}}" type="text/css" />
-  <link rel="stylesheet" href="{{asset('asset2/sdata/css/font-awesome/css/font-awesome.min.css')}}">
-
-  <!-- responsive devices styles -->
-  <link rel="stylesheet" media="screen" href="{{asset('asset2/sdata/css/responsive-leyouts.css')}}" type="text/css" />
-
-  <!-- mega menu -->
-  <link href="{{asset('asset2/sdata/js/mainmenu/sticky.css')}}" rel="stylesheet">
-  <link href="{{asset('asset2/sdata/js/mainmenu/bootstrap.min.css')}}" rel="stylesheet">
-  <link href="{{asset('asset2/sdata/js/mainmenu/mjes6gyvb.css')}}" rel="stylesheet">
-  <link href="{{asset('asset2/sdata/js/mainmenu/menu.css')}}" rel="stylesheet">
-
-  <!-- revolution slider -->
-
-  <!-- CSS STYLE-->
-  <link rel="stylesheet" type="text/css" href="{{asset('asset2/sdata/js/revolutionslider/css/style.css')}}" media="screen" />
+	<link rel="shortcut icon" href="{{ asset('assets/img/favicon/favicon.ico" type="image/x-icon') }}">
+	<link rel="shortcut icon" href="{{ asset('assets/img/favicon/favicon.ico" type="image/x-icon') }}">
+	<link rel="apple-touch-icon" href="{{ asset('assets/img/favicon/apple-touch-icon.png') }}">
+	<link rel="apple-touch-icon" sizes="72x72" href="{{ asset('assets/img/favicon/apple-touch-icon-72x72.png') }}">
+	<link rel="apple-touch-icon" sizes="114x114" href="{{ asset('assets/img/favicon/apple-touch-icon-114x114.png') }}">
+	<!-- Template Basic Images End -->
 
 
-
-  <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-  <link rel="stylesheet" type="text/css" href="{{asset('asset2/sdata/js/revolutionslider/rs-plugin/css/settings.css')}}" media="screen" />
-
-  <!-- simple line icons -->
-  <link rel="stylesheet" type="text/css" href="{{{asset('asset2/sdata/css/Simple-Line-Icons-Webfont/simple-line-icons.css')}}}"
-    media="screen" />
-
-  <!-- flexslider -->
-  <link rel="stylesheet" href="{{asset('asset2/sdata/js/flexslider/flexslider.css')}}" type="text/css" media="screen" />
-
-  <!-- Accordions -->
-  <link rel="stylesheet" href="{{asset('asset2/sdata/js/accordion/accordion.css')}}" type="text/css" media="all">
-
-  <!-- tabs -->
-  <link rel="stylesheet" type="text/css" href="{{asset('asset2/sdata/js/tabs/assets/css/responsive-tabs.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('asset2/sdata/js/tabs/assets/css/responsive-tabs2.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('asset2/sdata/js/tabs/assets/css/responsive-tabs3.css')}}">
-
-  <!-- forms -->
-  <link rel="stylesheet" href="{{asset('asset2/sdata/js/form/sky-forms.css')}}" type="text/css" media="all">
-
-  <!-- Remove the below comments to use your color option -->
-  <!--<link rel="stylesheet" href="sdata/css/colors/green.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/red.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/green.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/cyan.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/orange.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/liteblue.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/purple.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/bridge.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/grey.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/colors/darkred.css" />-->
-  <link rel="alternate stylesheet" type="text/css" href="{{asset('asset2/sdata/css/colors/dark.css')}}" title="dark" />
-
-  <!-- just remove the below comments witch bg patterns you want to use -->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-default.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-one.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-two.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-three.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-four.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-five.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-six.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-seven.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-eight.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-nine.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-ten.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-eleven.css" />-->
-  <!--<link rel="stylesheet" href="sdata/css/bg-patterns/pattern-twelve.css" />-->
-
-  <!-- style switcher -->
-  <link rel="stylesheet" media="screen" href="{{asset('asset2/sdata/js/style-switcher/color-switcher.css')}}" />
-  <!-- style switcher colors -->
-
-
-
-  <link rel="stylesheet" type="text/css" href="{{asset('asset2/sdata/css/s__style65b1.css?v=jbd56b')}}" />
-
-
-  <link rel="alternate stylesheet" type="text/css" href="{{asset('asset2/sdata/css/colors/darkred.css')}}" title="darkred" />
-  <link rel="alternate stylesheet" type="text/css" href="{{asset('asset2/sdata/css/colors/dark.css')}}" title="dark" />
+	<link rel="stylesheet" href="{{ asset('assets/libs/bootstrap/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/animate.css/animate.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/ResponsiveTables/ng_responsive_tables.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/bootstrap-sweetalert/sweetalert.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/magnific-popup/magnific-popup.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/flag-icon/css/flag-icon.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/ion.rangeSlider/css/ion.rangeSlider.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/libs/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/fonts.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 
 </head>
 
 <body>
-  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/api-check/7.5.5/api-check.min.js' async defer></script>
-  <div class="s__site_wrapper">
-    <div class="site_wrapper">
-      <header id="header">
 
-        <!-- Top header bar -->
-        @if (Auth::user())
-          <div id="trueHeader">
-            <div class="wrapper">
-              <div class="container">
-      
-                <!-- Logo -->
-                <div class="logo s__logo"><a href="/" id="logo"></a></div>
-                <!-- Menu -->
-                <div class="menu_main">
-                  <div class="navbar yamm navbar-default">
-                    <div class="container">
-                      <div class="navbar-header">
-                        <div class="navbar-toggle .navbar-collapse .pull-right " data-toggle="collapse"
-                          data-target="#navbar-collapse-1"> <span>Menu</span>
-                          <button type="button"> <i class="fa fa-bars"></i></button>
-                        </div>
-                      </div>
-                      <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
-                        <nav>
-                          <ul class="nav navbar-nav">
-                            <li class="dropdown"> <a href="/" class="dropdown-toggle active">Home</a>
-                            </li>
-                            <li class="dropdown"> <a href="/about" class="dropdown-toggle">About Us</a>
-                            </li>
-                            <li class="dropdown"> <a href="/news" class="dropdown-toggle">Company's news</a></li>
-                            <li class="dropdown"> <a href="/faq" class="dropdown-toggle">Faq</a></li>
-                            <li class="dropdown"> <a href="/terms&conditions" class="dropdown-toggle">Terms and Conditions</a></li>
-                            <li class="dropdown"> <a href="/contact" class="dropdown-toggle">Support</a>
-                            </li>
-                            <li class="dropdown"> <a href="/user/user_dashboard" class="dropdown-toggle">dashboard</a>
-                            </li>
-                          </ul>
-                        </nav>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- end menu -->
-      
-              </div>
-      
-              <!-- for future -->
-      
-            </div>
-          </div>        
-        @else
-          <!-- Top header bar -->
-        <div id="topHeader">
-          <div class="wrapper">
-            <div class="top_nav s__top_nav">
-              <div class="container">
-                <div class="left"> <a href="mailto:admin@bit-paycoin.com"><i class="fa fa-envelope-o"></i>
-                    &nbsp;admin@bit-paycoin.com</a>
-                  <a href="t.me/bitpaycoin.com" target="_blank"><i class="fa fa-telegram"></i>
-                    &nbsp;@BIT-PAYCOIN.com</a>
-                  <span>24x7 live Technical Support </span> </div>
-                <div class="right">
-                  <a class="login_but" href="/login"><i class="fa fa-unlock-alt"></i> Login</a>
-                  <a href="/register" class="registerbut"><i class="fa fa-user"></i> Registration</a>
-                  <div class="country_selector">language
-                    <select id="source" class="s__language">
-                      <option selected="selected" value="default"> English</option>
-                      <option value="ru">???????</option>
-                    </select>
-                  </div>
+	<div class="wrapper">
+		<div class="bg-light"></div>
 
-                </div>
-                <!-- end right social links -->
+		<header class="header-main">
+			<div class="btn-menu-wrap">
+				<div class="btn-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="container">
+				<div class="header-top-line">
+					<a href="{{ route('home') }}" class="logo">
+						<img src="{{ asset('assets/img/logo.png') }}" alt="" class="img-responsive logo-img">
+						<span class="logo-title">Profit-<span>Miners</span></span>
+					</a>
+					<ul class="support-list">
+						<li class="support-item wow bounceInLeft" data-wow-delay="0.6s">
+							<a href="https://www.facebook.com/" target="__blank" class="support-item__link facebook--icon">
+								<span class="support-item__value">Facebook</span>
+							</a>
+						</li>
+						<li class="support-item wow bounceInLeft" data-wow-delay="0.2s">
+							<a href="tel:+442039911140" class="support-item__link phone--icon">
+								<span class="support-item__title">Phone</span>
+								<span class="support-item__value">Coming soon</span>
+							</a>
+						</li>
+						<li class="support-item wow bounceInLeft" data-wow-delay="0.2s">
+							<a href="mailto:admin@Profit-miners.com" class="support-item__link email--icon">
+								<span class="support-item__title">Email</span>
+								<span class="support-item__value">admin@Profit-miners.com</span>
+							</a>
+						</li>
+					</ul>
 
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- end top navigation -->
+					<ul class="user-link-list">
+            <li class="user-link-item wow fadeInUp" data-wow-delay="0.8s"><a href="{{ route('login') }}"
+								class="user-link-item__link"><span>Sign in</span></a></li>
+						<li class="user-link-item wow fadeInUp" data-wow-delay="1s"><a href="{{ route('register') }}"
+								class="user-link-item__link"><span>Sign up</span></a></li>
+					</ul>
+					<!-- /.user-link-wrap -->
 
-    </div>
-    <!-- end top navigation -->
+				</div>
+				<!-- /.header-top-line -->
+			</div>
+			<!-- /.container -->
+			<div class="header-content">
 
-    <div id="trueHeader">
-      <div class="wrapper">
-        <div class="container">
+				<div class="bg-header-el"></div>
+				<div class="bg-header"></div>
+				<div class="container">
+					<nav class="main-menu">
+						<ul class="main-menu-list">
+							<li class="main-menu-item wow zoomIn" data-wow-delay="0.6s"><a href="{{ route('home') }}"
+									class="main-menu_link"><span>Home</span></a></li>
+							<li class="main-menu-item wow zoomIn" data-wow-delay="0.8s"><a href="{{ route('about') }}"
+									class="main-menu_link"><span>About</span></a></li>
+							<li class="main-menu-item wow zoomIn" data-wow-delay="1s"><a href="{{ route('investors') }}"
+									class="main-menu_link"><span>For Investors</span></a></li>
+							<li class="main-menu-item wow zoomIn" data-wow-delay="1.2s"><a href="{{ route('partners') }}"
+									class="main-menu_link"><span>For Partners</span></a></li>
+							<li class="main-menu-item wow zoomIn" class="main-menu-item wow zoomIn" data-wow-delay="1.4s"><a
+									href="{{ route('faq') }}" class="main-menu_link"><span>FAQ</span></a></li>
+							<li class="main-menu-item wow zoomIn" data-wow-delay="1.6s"><a href="{{ route('rules') }}"
+									class="main-menu_link"><span>Rules</span></a></li>
+							<li class="main-menu-item wow zoomIn" data-wow-delay="1.8s"><a href="{{ route('support') }}"
+									class="main-menu_link"><span>Support</span></a></li>
+						</ul>
+					</nav>
+					<!-- /.main-menu -->
 
-          <!-- Logo -->
-          <div class="logo s__logo"><a href="/" id="logo"></a></div>
-          <!-- Menu -->
-          <div class="menu_main">
-            <div class="navbar yamm navbar-default">
-              <div class="container">
-                <div class="navbar-header">
-                  <div class="navbar-toggle .navbar-collapse .pull-right " data-toggle="collapse"
-                    data-target="#navbar-collapse-1"> <span>Menu</span>
-                    <button type="button"> <i class="fa fa-bars"></i></button>
-                  </div>
-                </div>
-                <div id="navbar-collapse-1" class="navbar-collapse collapse pull-right">
-                  <nav>
-                    <ul class="nav navbar-nav">
-                      <li class="dropdown"> <a href="/" class="dropdown-toggle active"> Home</a>
-                      </li>
-                      <li class="dropdown"> <a href="/about" class="dropdown-toggle"> About Us</a>
-                      </li>
-                      <li class="dropdown"> <a href="/news" class="dropdown-toggle"> Company's
-                          news</a></li>
-                      <li class="dropdown"> <a href="/faq" class="dropdown-toggle"> Faq</a></li>
-                      <li class="dropdown"> <a href="/terms&conditions" class="dropdown-toggle"> Terms and
-                          Conditions</a></li>
-                      <li class="dropdown"> <a href="/contact" class="dropdown-toggle"> Support</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end menu -->
+					<div class="header-banner">
+						<div class="header-banner-block">
+							<div class="logo-el1"></div>
+							<div class="logo-el2"></div>
+							<div class="logo-el3"></div>
+							<div class="logo-el4"></div>
+							<div class="logo-el5"></div>
+							<div class="logo-center"></div>
+							<div class="logo-light"></div>
+							<div class="logo-el-left"></div>
+							<div class="logo-el-right"></div>
+						</div>
+						<!-- /.header-banner-block -->
+						<div class="header-banner-content">
+							<h1 class="wow bounceInRight" data-wow-delay="1s">Earn from 5.1% to 10% every day!</h1>
+							<div class="header-banner-list">
+								<div class="header-banner-item wow fadeInRightBig" data-wow-delay="1.3s">
+									<div class="header-banner-item__icon">
+										<img src="{{ asset('assets/img/icons/btc-big.png') }}" class="img-responsive" alt="">
+									</div>
+									<div class="header-banner-item__text">Bitcoin is a new generation of decentralized digital currency,
+										created and operating only on the Internet</div>
+									<!-- <a href="#" class="header-banner-item__link">Регистрация</a> -->
+								</div>
+							</div>
+							<!-- /.header-banner-list -->
+						</div>
+						<!-- /.header-banner-content -->
+					</div>
+					<!-- /.header-banner -->
 
-        </div>
-
-        <!-- for future -->
-
-      </div>
-    </div>
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- /.header-content -->
     </header>
+    
+    <main class="main-page">
+      {{-- @yield('content') --}}
+    
 
-    <div class="clearfix"></div>    
-        @endif
-        
+</html>

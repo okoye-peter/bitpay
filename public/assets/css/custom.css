@@ -1,0 +1,384 @@
+.walletshead {
+	margin-bottom: 15px;
+}
+
+.minVal {
+	display: inline-block !important;
+}
+
+.histitle h2 {
+	float: left;
+}
+
+.form-calculator__input {
+	outline: 0;
+}
+
+.header-banner h1 {
+	font-size: 40px;
+}
+
+.statsTable img {
+	width: 100px;
+}
+
+.investors_amount {
+	color: red !important;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+.investors,
+.cashers {
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.cashers_amount {
+	color: #92d102 !important;
+	font-weight: bold;
+	font-size: 130%;
+}
+
+.bannerIMG {
+	margin: 15px 0;
+}
+
+.bannerIMG img {
+	margin: 0 auto;
+}
+
+.support-item__link.facebook--icon:before {
+	top: 1px;
+	background-image: url('../img/fb.png');
+	background-position: center;
+	width: 17px;
+	height: 17px;
+}
+
+.support-item__link.insta--icon:before {
+	top: 1px;
+	background-image: url('../img/insta.png');
+	background-position: center;
+	width: 17px;
+	height: 17px;
+}
+
+.support-item__link.phone--icon:before {
+	top: 1px;
+	background-image: url('../img/phone1.png');
+	background-position: center;
+	width: 17px;
+	height: 17px;
+}
+
+.histitle select {
+	float: right;
+	color: #000;
+	outline: 0;
+	padding: 5px;
+}
+
+.label--code {
+	position: relative;
+}
+
+.support-item__value {
+	font-size: 16px;
+}
+
+.label--code .img-code {
+	position: absolute;
+	top: 22px;
+	right: 60px;
+}
+
+.add-form-info .add-form-info__box {
+	display: block;
+	width: 100%;
+}
+
+.about-page .advantages-item {
+	max-width: 370px;
+}
+
+.user-link-item__link span {
+	font-size: 16px;
+}
+
+
+.plans-item__title {
+	font-size: 22px;
+}
+
+.calendar-header__days {
+	font-size: 18px;
+}
+
+.calendar-header__clock span {
+	font-size: 20px;
+}
+
+.depConf {
+	width: 90%;
+	margin: 0 auto;
+	margin-bottom: 15px;
+}
+
+.btc_form.btc3 {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.btc_form.btc3 a,
+.btc_form.btc3 img {
+	margin-bottom: 15px;
+	display: inline-block;
+}
+
+.bg-light {
+	z-index: -1;
+}
+
+.btc_form.btc3 a {
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn.btn-white {
+	outline: 0 !important;
+}
+
+.depForm .btn.btn-orange {
+	padding: 0 15px;
+	margin-bottom: 15px;
+	outline: 0 !important;
+}
+
+.faq-tabs-list__number {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.form-addition-account .form-item .form-item__title {
+	width: 33%;
+}
+
+.form-addition-account .form-item label {
+	width: 67%;
+}
+
+.withdform {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+}
+
+.section-table__icon.spear-up--icon {
+	margin: 0 auto;
+	margin-bottom: 5px;
+}
+
+.upValue1 {
+	text-align: center;
+}
+
+.statistic-list-item span {
+	display: block;
+}
+
+.withdform .btn.btn-white {
+	padding: 0 15px;
+	margin-bottom: 15px;
+	outline: 0 !important;
+}
+
+.withdform .btn-white:hover:before {
+	opacity: 0;
+}
+
+.depConf tr {
+	margin: 5px 0;
+	padding: 5px 0;
+	border-bottom: 1px solid #fff;
+	display: block;
+}
+
+.depConf td,
+.depConf th {
+	display: inline-block;
+	width: 48%;
+}
+
+.depConf tr:last-child {
+	border-bottom: 0;
+}
+
+.fcap {
+	position: relative;
+}
+
+.abl p,
+.abr p {
+	margin-bottom: 15px;
+}
+
+.fcap img {
+	position: absolute;
+	top: 12px;
+	right: 20px;
+}
+
+.section-about-inner__text {
+	float: none;
+	width: 100%;
+}
+
+.section-about-inner__text p {
+	margin-bottom: 15px;
+}
+
+.btn.btn-orange {
+	outline: 0 !important;
+}
+
+.form-contacts__input,
+.form-contacts__textarea,
+.form-contacts__btn .btn,
+.form-contacts__btn .btn span {
+	outline: 0 !important;
+}
+
+.referral-item .referral-item__percent {
+	display: block;
+	font-size: 42px;
+	line-height: 2.3;
+}
+
+.referral-item .referral-item__percent span {
+	font-size: 42px;
+	line-height: 2.3;
+}
+
+.referral-item2 {
+	padding: 6px 80px 24px;
+}
+
+.referrals-page .referral-item {
+	padding: 200px 50px 100px 100px;
+}
+
+.statBlock h3 {
+	text-align: center;
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+.statBlock p {
+	text-align: center;
+	font-size: 16px;
+}
+
+.statsTable {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0px 15px;
+}
+
+.statsTable tr th,
+.statsTable tr td {
+	text-align: center;
+}
+
+
+.statsTable tr {
+	margin-bottom: 10px;
+}
+
+.lastStatItem h3 {
+	color: #fff;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	.block-graph {
+		display: inline-block;
+		margin-bottom: 50px;
+	}
+
+	.about-page .advantages-item {
+		max-width: 295px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	.block-graph {
+		display: inline-block;
+		margin-bottom: 50px;
+	}
+
+	.statBlock {
+		margin-bottom: 30px;
+	}
+
+	.about-page .advantages-item {
+		max-width: 345px;
+	}
+}
+
+
+@media screen and (max-width: 580px) {
+
+	.form-user__label.label--code .img-code {
+		bottom: auto;
+		top: 40px;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	.statsTable tr,
+	.statsTable tr th,
+	.statsTable tr td {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.statBlock {
+		margin: 15px 0;
+	}
+
+	.certificateLink {
+		display: block;
+		text-align: center;
+	}
+
+	.about-page .advantages-item {
+		max-width: 100%;
+	}
+
+	.referrals-page .referral-item {
+		padding: 40px 50px 100px 100px;
+	}
+
+	.referral-item .referral-item__percent,
+	.referral-item .referral-item__percent span {
+		font-size: 33px;
+	}
+
+	.referral-item2 .referral-item__title {
+		font-size: 20px;
+		line-height: 1.7;
+	}
+
+	.referral-item2 .referral-item__percent {
+		font-size: 18px;
+		line-height: 1.7;
+	}
+
+	.referral-item2 .referral-item__percent span {
+		font-size: 18px;
+		line-height: 1.7;
+	}
+}

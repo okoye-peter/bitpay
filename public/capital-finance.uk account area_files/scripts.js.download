@@ -1,0 +1,57 @@
+/*! Copyright (c) 2018 bitbankpro.com
+
+Designed and Developed by H4U GROUP
+
+https://hyips4u.com
+
+
+*/
+
+
+$(function(){
+  $(document).on('change', 'label.checkbox-field ', function(event) {
+    $(this).toggleClass('checked');
+  });
+  $(document).on('change', '.checkbox-psys ', function(event) {
+  $('.checkbox-psys ').removeClass('checked')
+    $(this).addClass('checked');
+  });
+
+  $('[data-toggle="tooltip"]').tooltip(); 
+
+  $(document).on('mousemove','.header', function(event){
+        var bodyX=$(this).width();
+        var bodyY=$(this).height();
+        var centerX=bodyX/2;
+        var centerY=bodyY/2;
+        var mouseX=event.screenX;
+        var mouseY=event.screenY;
+        var fromCenterX=Math.round((mouseX-centerX)*15/bodyX);
+        var fromCenterY=Math.round((mouseY-centerY)*15/bodyY);
+        $('#paralax1').css({'margin-top':fromCenterY+'px ', 'margin-left':fromCenterX+'px'});
+  });
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+

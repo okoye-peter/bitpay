@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "RobotoBold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoBold/RobotoBoldd41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype"), url("../fonts/RobotoBold/RobotoBold.svg#RobotoBold") format("svg");
+}
+
+@font-face {
+  font-family: "RobotoMedium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoMedium/RobotoMediumd41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoMedium/RobotoMedium.woff") format("woff"), url("../fonts/RobotoMedium/RobotoMedium.ttf") format("truetype"), url("../fonts/RobotoMedium/RobotoMedium.html#RobotoMedium") format("svg");
+}
+
+@font-face {
+  font-family: "RobotoRegular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoRegular/RobotoRegulard41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype"), url("../fonts/RobotoRegular/RobotoRegular.html#RobotoRegular") format("svg");
+}
+
+@font-face {
+  font-family: "RobotoLight";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoLight/RobotoLightd41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoLight/RobotoLight.woff") format("woff"), url("../fonts/RobotoLight/RobotoLight.ttf") format("truetype"), url("../fonts/RobotoLight/RobotoLight.svg#RobotoLight") format("svg");
+}
+
+@font-face {
+  font-family: "RobotoThin";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/RobotoThin/RobotoThind41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoThin/RobotoThin.woff") format("woff"), url("../fonts/RobotoThin/RobotoThin.ttf") format("truetype"), url("../fonts/RobotoThin/RobotoThin.svg#RobotoThin") format("svg");
+}
+
+@font-face {
+  font-family: "MagistralTT";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/magistraltt/magistralttd41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/magistraltt/magistraltt.woff") format("woff"), url("../fonts/magistraltt/magistraltt.ttf") format("truetype"), url("../fonts/magistraltt/magistraltt.svg#MagistralTT") format("svg");
+}
+
+@font-face {
+  font-family: "MagistralTT-Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/magistraltt-bold/magistraltt-boldd41dd41d.eot?#iefix") format("embedded-opentype"), url("../fonts/magistraltt-bold/magistraltt-bold.woff") format("woff"), url("../fonts/magistraltt-bold/magistraltt-bold.ttf") format("truetype"), url("../fonts/magistraltt-bold/magistraltt-bold.svg#MagistralTT-Bold") format("svg");
+}

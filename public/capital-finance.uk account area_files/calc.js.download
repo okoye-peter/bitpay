@@ -1,0 +1,102 @@
+/*! Copyright (c) 2018 bitbankpro.com
+
+Designed and Developed by H4U GROUP
+
+https://hyips4u.com
+
+
+*/
+
+
+(function($) {
+    "use strict";
+    
+    $('.calculator input[name="amount"]').on('change keyup', function () {
+        var amount = $(this).val();
+        var cur_plan_item = $('.calculator select[name="plan"] option:selected');
+
+        var min_amount = cur_plan_item.data('usd_min');
+        var max_amount = cur_plan_item.data('usd_max');
+        var daily_percent = cur_plan_item.data('daily-percent');
+        var total_percent = cur_plan_item.data('total-percent');
+        var period = cur_plan_item.data('period');
+
+        if(amount<min_amount){
+            amount = 0;
+        } else if(amount>max_amount){
+            amount = max_amount;
+            $(this).val(amount);
+        }
+        if (daily_percent == 100){
+         $('#title_text').html('Weekly profit');
+         }
+         else
+         {
+         $('#title_text').html('Daily profit');
+         }
+        var daily_profit = amount/100*daily_percent;
+        daily_profit = daily_profit.toFixed(2);
+        var total_profit = amount/100*total_percent;
+        total_profit = total_profit.toFixed(2);
+
+        $('#daily_profit').html('<small>$</small>'+daily_profit);
+        $('#total_profit').html('<small>$</small>'+total_profit);
+	
+         if (period == 1){
+         $('#daily_profit').html('---');
+         }
+    });
+    $('.calculator select[name="plan"]').change(function () {
+        
+        var cur_plan_item = $(this).find('option:selected');
+        var min_amount = cur_plan_item.data('usd_min');
+        var max_amount = cur_plan_item.data('usd_max');
+        var daily_percent = cur_plan_item.data('daily-percent');
+        var period = cur_plan_item.data('period');
+        var min_amount = cur_plan_item.data('usd_min');
+        var amount = min_amount;
+        $('.calculator input[name="amount"]').val(amount);
+        if (daily_percent == 100){
+         $('#title_text').html('Weekly profit');
+         }
+         else
+         {
+         $('#title_text').html('Daily profit');
+         }
+        var daily_profit = amount/100*daily_percent;
+        daily_profit = daily_profit.toFixed(2);
+        var total_profit = amount/100*daily_percent;
+        total_profit = total_profit.toFixed(2);
+
+        $('#daily_profit').html('<small>$</small>'+daily_profit);
+        $('#total_profit').html('<small>$</small>'+total_profit);
+	
+         if (period == 1){
+         $('#daily_profit').html('---');
+         }
+
+    });
+    
+    $('.dashcalc select[name="h_id"]').change(function () {
+        
+        var cur_plan_item = $(this).find('option:selected');
+        var min_amount = cur_plan_item.data('usd_min');
+        var max_amount = cur_plan_item.data('usd_max');
+        var daily_percent = cur_plan_item.data('daily-percent');
+         var total_percent = cur_plan_item.data('total-percent');
+        var period = cur_plan_item.data('period');
+        var min_amount = cur_plan_item.data('usd_min');
+        var plan = cur_plan_item.data('plan');
+        var amount = min_amount;
+        $('.depfield input[name="amount"]').val(amount);
+
+        $('.plans-id-1').hide();
+        $('.plans-id-2').hide();
+        $('.plans-id-3').hide();
+        $('.plans-id-4').hide();
+        $('.plans-id-'+plan).show();
+	
+
+    });
+ 
+})(jQuery);
