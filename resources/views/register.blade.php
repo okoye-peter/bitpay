@@ -2,7 +2,18 @@
 
     <div class="container">
 
-
+      @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{session('success')}}
+        </div>
+      @endif
+      @error('error')
+        <div class="alert alert-success alert-dismissible fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          {{$message}}
+        </div>
+      @enderror
 
           <script language=javascript>
             function checkform() {
@@ -65,8 +76,9 @@
 
 
 
-          <form method=post onsubmit="return checkform()" name="regform" class="form-user"><input type="hidden"
-              name="form_id" value="16001228388625"><input type="hidden" name="form_token"
+          <form method=post onsubmit="return checkform()" name="regform" class="form-user" action="{{ route('registration') }}">
+            @csrf
+            <input type="hidden" name="form_id" value="16001228388625"><input type="hidden" name="form_token"
               value="cc2f6b5aca877e0f803fa2dda8181356">
             <input type=hidden name=a value="signup">
             <input type=hidden name=action value="signup">
@@ -76,39 +88,65 @@
             <label class="form-user__label">
               <span class="label-title">Your name</span>
               <!-- /.label-title -->
-              <input type="text" class="form-user__input" name="fullname" value="">
+              <input type="text" class="form-user__input" name="full_name" value="{{ old('full_name') ?? '' }}">
+                @error('full_name')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </label>
             <label class="form-user__label">
               <span class="label-title">Your username</span>
               <!-- /.label-title -->
-              <input type="text" class="form-user__input" name="username" alue="">
+              <input type="text" class="form-user__input" name="username" value="{{ old('username') }}">
+              @error('username')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+              @enderror
+            </label>
+
+            <label class="form-user__label">
+              <span class="label-title">Your email</span>
+              <!-- /.label-title -->
+              <input type="email" class="form-user__input" name="email" value="{{ old('email') ?? '' }}">
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </label>
             <label class="form-user__label">
               <span class="label-title">Password</span>
               <!-- /.label-title -->
               <input type="password" class="form-user__input" name="password" value="">
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </label>
             <label class="form-user__label">
               <span class="label-title">Confirm Password</span>
               <!-- /.label-title -->
-              <input type="password" class="form-user__input" name="password2" value="">
+              <input type="password" class="form-user__input" name="password_confirmation" value="">
+                @error('password_confirmation')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </label>
-            <label class="form-user__label">
-              <span class="label-title">Your email</span>
-              <!-- /.label-title -->
-              <input type="email" class="form-user__input" name="email" value="">
-            </label>
-            <label class="form-user__label">
+            {{-- <label class="form-user__label">
               <span class="label-title">Confirm an email</span>
               <!-- /.label-title -->
               <input type="email" class="form-user__input" name="email1" value="">
-            </label>
+            </label> --}}
             <h2 class="walletshead">Your wallets</h2>
 
             <label class="form-user__label">
               <span class="label-title">Bitcoin</span>
               <!-- /.label-title -->
-              <input type="text" class="form-user__input" name=pay_account[48] value="">
+              <input type="text" class="form-user__input" name="walletID" value="{{ old('walletID') ?? ''}}">
             </label>
 
 

@@ -17,11 +17,13 @@ use App\Http\Controllers\AuthController;
 
 // new routes
 Route::get('/', "PagesController@index")->name('home');
+Route::get('/home', "PagesController@index");
 
 Route::get('/login','PagesController@login')->name('login');
 
 Route::post('/register', 'AuthController@register')->name('registration');
 Route::post('/login', 'AuthController@login')->name('authenticate');
+
 
 Route::get('/register', 'PagesController@register')->name('register');
 
@@ -35,49 +37,59 @@ Route::get('/investors','PagesController@investors')->name('investors');
 Route::get('/rules','PagesController@rules')->name('rules');
 Route::get('/support','PagesController@support')->name('support');
 
-Route::post('/password/reset', 'PasswordResetController@sendResetLink');
+Route::post('/password/reset', 'PasswordResetController@sendResetLink')->name('send.link');
 Route::post('/reset', 'PasswordResetController@Reset');
 Route::get('/reset', 'PasswordResetController@showResetForm');
 Route::get('/password/reset', 'PagesController@passwordReset')->name('password.reset');
 
 
 Route::middleware('auth')->prefix('/user')->group(function(){
-    Route::get('/user_dashboard', 'UserController@Dashboard');
-     Route::post('/logout', [AuthController::class,'logout']);
+    Route::get('/user_dashboard', 'UserController@Dashboard')->name('dashboard');
+    Route::post('/logout', [AuthController::class,'logout'])->name('logout');
     // withdrawal
     Route::post('/withdraw', 'UserController@withdraw');
-    Route::get('/withdraw', 'UserController@viewWithdraw');
+    Route::get('/withdraw', 'UserController@viewWithdraw')->name('withdraw');
 
     // investment
-    Route::post('/save_deposit', 'UserController@invest');       
+    Route::get('/deposit', 'UserController@activeDeposit')->name('active.deposit');
     Route::get('/complete', 'PagesController@deposit_save');
     Route::post('/invest', 'UserController@pay');
-    Route::get('/deposit', 'UserController@viewInvestment');
+
+    // history
+    Route::get('/history', 'UserController@history')->name('history');
 
     // profile update
-    Route::get('/edit', 'UserController@show');
-    Route::patch('/', 'UserController@update');
+    Route::get('/edit', 'UserController@show')->name('profile');
+    Route::patch('/', 'UserController@update')->name('update');
 
     Route::get('/referral', function(){
         return view('referral');
     });
+
     Route::get('/ref_links', function(){
         return view('ref_link');
-    });
-
-    Route::get('/withdrawal', function(){
-        return view('withdrawal');
     });
 });
 
 // admin
-Route::post('/update/user', 'AdminController@investment');
-Route::get('/admin', 'AdminController@superView');
-Route::patch('/update/{investment}', 'AdminController@update');
-Route::patch('/withdraw/{withdraw}', 'AdminController@updateWithdraw');
-Route::post('/sendMail','AdminController@mail');
-Route::post('/contact','AdminController@mail');
-Route::delete('/delete/{user}', 'AdminController@destroy');
+Route::prefix('/admin')->group(function(){
+    Route::post('/login', 'AuthController@adminLogin')->name('admin.authenticate');
+    Route::get('login', 'AdminController@login')->name('admin.login');
+    
+    Route::middleware(['auth', 'isadmin'])->group(function (){
+        Route::post('/update/user', 'AdminController@investment');
+        Route::get('/form', 'AdminController@showForm')->name('admin.form');
+        Route::get('/dashboard', 'AdminController@superView')->name('admin.dashboard');
+        Route::patch('/update/{investment}', 'AdminController@update')->name('admin.confirm.investment');
+        Route::patch('/withdraw/{withdraw}', 'AdminController@updateWithdraw')->name('admin.confirm.withdrawal');
+        Route::get('/sendMail', 'AdminController@showMailForm')->name('admin.email');
+        Route::post('/sendMail', 'AdminController@mail')->name('admin.send.mail');
+        // Route::post('/contact', 'AdminController@mail');
+        Route::post('/company_bonus', 'AdminController@updateCompanyBonus')->name('update.company.bonus');
+        Route::delete('/delete/{user}', 'AdminController@destroy');
+    });
+    
+});
 
 
 // Route::post('/register', [AuthController::class,'register']);

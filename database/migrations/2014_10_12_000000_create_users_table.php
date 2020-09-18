@@ -11,7 +11,7 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up() 
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
@@ -22,13 +22,13 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('walletID')->unique();
             $table->string('clientID')->unique();
-            $table->string('secret_question');
-            $table->string('secret_answer');
-            $table->string('account_balance')->default(0);
-            $table->string('earned_total')->default(0);
-            $table->string('pending_withdrawal')->default(0);
-            $table->string('active_deposit')->default(0);
-            $table->string('withdraw_total')->default(0);
+            $table->integer('isadmin')->default(0);
+            $table->float('account_balance',12,2)->default(0.00);
+            $table->float('earned_total', 12, 2)->default(0.00);
+            $table->float('pending_withdrawal', 12, 2)->default(0.00);
+            $table->float('active_deposit', 12, 2)->default(0.00);
+            $table->float('withdraw_total', 12, 2)->default(0.00);
+            $table->float('company_bonus', 12, 2)->default(0.00);
             $table->rememberToken();
             $table->timestamps();
         });

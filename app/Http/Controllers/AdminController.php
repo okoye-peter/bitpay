@@ -13,21 +13,25 @@ use Carbon\Carbon;
 
 class AdminController extends Controller
 {
-
-    public function __construct()
+    public function login()
     {
-        $this->middleware('auth');
+        return view('admin.login');
+    }
+
+    public function showForm()
+    {
+        return view('admin.form');
     }
 
     public function superView()
     {
-        $users = User::with('investment')->latest()->get();
+        $users = User::where('isadmin', 0)->with('investment')->latest()->get();
         $investments = Investment::latest()->get();
         $withdraws   =   Withdraw::orderBy('id', 'DESC')->get();
 //        $investments = Investment::where('status', 'pending')->latest()->get();
 //        $withdraws   =   Withdraw::where('isPaid', 'pending')->orderBy('id', 'DESC')->get();
 
-        return view('admin_control',compact('withdraws','users','investments'));
+        return view('admin.dashboard',compact('withdraws','users','investments'));
     }
 
     public function investment(Request $request)
@@ -52,6 +56,11 @@ class AdminController extends Controller
         // $client->save();
         $client->update($data);
         return back()->with('success','user details updated pdated successfully');
+    }
+
+    public function showMailForm()
+    {
+        return view('admin.email');
     }
 
     public function mail(Request $request)
@@ -85,6 +94,25 @@ class AdminController extends Controller
         // $total_withdraw = $withdraw->user->withdraw->where('isPaid', 'approve')->sum('amount');
         // $withdraw->user()->update(['withdraw_total' => $total_withdraw]);
         return back()->with('success','Updated successfully');
+    }
+
+    public function updateCompanyBonus(Request $request)
+    {
+        $data = $request->validate([
+            'clientID' => 'required|string|exists:users',
+            'company_bonus' => 'required|string'
+        ]);
+
+        $user = User::where('clientID', $data['clientID'])->first();
+        if ($user) {
+            $user->update([
+                'company_bonus' => $data['company_bonus']
+            ]);
+            return back()->with('success', 'Client company bonus updated successfully');
+        }
+
+        return back()->withErrors(['error' => 'Oops! something went wrong']);
+
     }
 
     public function subAdmin()

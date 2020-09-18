@@ -95,10 +95,24 @@
 					</ul>
 
 					<ul class="user-link-list">
-            <li class="user-link-item wow fadeInUp" data-wow-delay="0.8s"><a href="{{ route('login') }}"
-								class="user-link-item__link"><span>Sign in</span></a></li>
-						<li class="user-link-item wow fadeInUp" data-wow-delay="1s"><a href="{{ route('register') }}"
-								class="user-link-item__link"><span>Sign up</span></a></li>
+						@guest
+							<li class="user-link-item wow fadeInUp" data-wow-delay="0.8s">
+								<a href="{{ route('login') }}" class="user-link-item__link">
+									<span>Sign in</span>
+								</a>
+							</li>
+							<li class="user-link-item wow fadeInUp" data-wow-delay="1s">
+								<a href="{{ route('register') }}" class="user-link-item__link">
+									<span>Sign up</span>
+								</a>
+							</li>
+						@else
+							<li class="user-link-item wow fadeInUp" data-wow-delay="1s">
+								<a href="{{ route('dashboard') }}" class="user-link-item__link">
+									<span>Dashboard</span>
+								</a>
+							</li>
+						@endguest
 					</ul>
 					<!-- /.user-link-wrap -->
 

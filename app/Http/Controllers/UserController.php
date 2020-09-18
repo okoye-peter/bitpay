@@ -21,7 +21,7 @@ class UserController extends Controller
 
     public function show(){
         $user = Auth::user();
-        return view('edit_document', compact('user'));
+        return view('edit', compact('user'));
     }
 
     public function update(Request $request)
@@ -29,19 +29,18 @@ class UserController extends Controller
         $data = $request->validate([
             'full_name' => 'required|string',
             'email' => 'required|string|email',
-            'password' => 'required|confirmed|string',
+            'password' => 'required|string',
             'walletID' => 'required|string',
         ]);
         $data['password'] = Hash::make($data['password']);
-
+        
         Auth::user()->update($data);
         return back()->with('success', 'profile updated successfully');
     }
 
     public function dashboard()
     {
-        $user = Auth::user();
-        
+        $user = Auth::user();        
         return view('user_dashboard', compact('user'));
     }
 
@@ -104,12 +103,6 @@ class UserController extends Controller
     public function updatePendingWithdrawal(){
         $pending_withdrawal = \request()->user()->withdraw->where('isPaid', 'pending')->sum('amount');
         auth()->user()->update(['pending_withdrawal', $pending_withdrawal]);
-    }
-
-    public function viewInvestment()
-    {
-        $user = Auth::user();
-        return view('deposit_fund', compact('user'));
     }
 
     public function invest(Request $request)
@@ -175,9 +168,15 @@ class UserController extends Controller
 
     }
 
-    public function viewInvestboard()
+    public function activeDeposit()
     {
         $user = Auth::user();
-        return view('investboard', compact('user'));
+        return view('active_deposit', compact('user'));
+    }
+
+    public function history()
+    {
+        $user = Auth::user();
+        return view('history', compact('user'));
     }
 }

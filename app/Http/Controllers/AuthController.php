@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Jobs\AdminSendEmailJob;
@@ -22,8 +23,6 @@ class AuthController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'walletID' => 'required|string|unique:users',
             'full_name' => 'required|string',
-            'secret_question' => 'required|string',
-            'secret_answer' => 'required|string',
         ]);
 
             $user = User::create([
@@ -32,8 +31,6 @@ class AuthController extends Controller
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
                 'walletID' => $data['walletID'],
-                'secret_question' => $data['secret_question'],
-                'secret_answer' => $data['secret_answer'],
                 'full_name' => $data['full_name']
             ]);
             if($user){
@@ -51,6 +48,22 @@ class AuthController extends Controller
         ]);
         if (auth()->attempt(array('email' => $data['email'], 'password' => $data['password']))) {
             return redirect('/user/user_dashboard');
+        }
+        return back()->withErrors(["error"=> "Invalid login credentials"]);
+
+    }
+
+    public function adminLogin(Request $request)
+    {
+        $data = $request->validate([
+            'email' => ['email', 'required'],
+            'password' => ['min:5', 'required']
+        ]);
+        if (auth()->attempt(array('email' => $data['email'], 'password' => $data['password']))) {
+            if (auth()->user()->isadmin == 1) {
+                return redirect('/admin/dashboard');
+            }
+            return abort(403);
         }
         return back()->withErrors(["error"=> "Invalid login credentials"]);
 
