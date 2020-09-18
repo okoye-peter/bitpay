@@ -39,13 +39,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function withdraw()
-    {
-        return $this->hasMany(Withdraw::class);
-    }
-
     public function investment()
     {
         return $this->hasMany(Investment::class);
+    }
+
+    public function withdraw()
+    {
+        return $this->hasMany(Withdraw::class);
     }
 }

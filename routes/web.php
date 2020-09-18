@@ -47,13 +47,13 @@ Route::middleware('auth')->prefix('/user')->group(function(){
     Route::get('/user_dashboard', 'UserController@Dashboard')->name('dashboard');
     Route::post('/logout', [AuthController::class,'logout'])->name('logout');
     // withdrawal
-    Route::post('/withdraw', 'UserController@withdraw');
+    Route::post('/withdraw', 'UserController@withdraw')->name('save.withdrawal');
     Route::get('/withdraw', 'UserController@viewWithdraw')->name('withdraw');
 
     // investment
     Route::get('/deposit', 'UserController@activeDeposit')->name('active.deposit');
-    Route::get('/complete', 'PagesController@deposit_save');
-    Route::post('/invest', 'UserController@pay');
+    Route::get('/deposit/fund', 'PagesController@deposit')->name('deposit');
+    Route::post('/invest', 'UserController@invest')->name('save.deposit');
 
     // history
     Route::get('/history', 'UserController@history')->name('history');
@@ -61,14 +61,6 @@ Route::middleware('auth')->prefix('/user')->group(function(){
     // profile update
     Route::get('/edit', 'UserController@show')->name('profile');
     Route::patch('/', 'UserController@update')->name('update');
-
-    Route::get('/referral', function(){
-        return view('referral');
-    });
-
-    Route::get('/ref_links', function(){
-        return view('ref_link');
-    });
 });
 
 // admin

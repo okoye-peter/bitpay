@@ -134,6 +134,11 @@
         <div class="header_menu">
           <div class="container">
             <div class="row">
+              <div class="col-md-12 text-right">
+                <div class="account-userpanel">
+                  <span>Logged in as: </span> {{auth()->user()->username}}</b>
+                </div>
+              </div>
               <div class="col-md-12">
                 <div class="account-menu">
                   <ul>

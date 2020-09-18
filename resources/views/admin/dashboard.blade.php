@@ -103,7 +103,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($investments as $index => $invesment)
+                                            @foreach ($investments as $index => $investment)
                                                 <tr>
                                                     <th scope="row">{{++$index}}</th>
                                                     <td>{{$investment->user->email}}</td>
@@ -114,6 +114,7 @@
                                                     <td>
                                                         <form action="{{ route('admin.confirm.investment', [$investment->id] ) }}" method="post" class="form-inline">
                                                             @csrf
+                                                            @method('PATCH')
                                                             <select name="action" class="form-control" onchange="this.parentElement.submit()">
                                                                 <option value="" disabled selected></option>
                                                                 <option value="approve">approve</option>
@@ -187,6 +188,8 @@
                                                 <th scope="col">User Name</th>
                                                 <th scope="col">User ID</th>
                                                 <th scope="col">User wallet</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Status</th>
                                                 <th scope="col">Options</th>
                                             </tr>
                                         </thead>
@@ -198,9 +201,12 @@
                                                     <td>{{$withdraw->user->username}}</td>
                                                     <td>{{$withdraw->user->clientID}}</td>
                                                     <td>{{$withdraw->user->walletID}}</td>
+                                                    <td>{{$withdraw->amount}}</td>
+                                                    <td>{{$withdraw->isPaid}}</td>
                                                     <td>
                                                         <form action="{{ route('admin.confirm.withdrawal', [$withdraw->id] ) }}" method="post" class="form-inline">
                                                             @csrf
+                                                            @method('PATCH')
                                                             <select name="action" class="form-control" onchange="this.parentElement.submit()">
                                                                 <option value="" disabled selected></option>
                                                                 <option value="approve">approve</option>

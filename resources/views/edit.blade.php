@@ -12,8 +12,8 @@
 
               </h2>
               <div style="float:right;">
-                <a href="https://capital-finance.uk/?a=deposit" class="btn btn-blue with-icon">Make deposit</a>
-                <a href="https://capital-finance.uk/?a=withdraw" class="btn btn-green with-icon">withdraw</a>
+                <a href="{{ route('deposit') }}" class="btn btn-blue with-icon"> Make deposit</a>
+                <a href="{{ route('withdraw') }}" class="btn btn-green with-icon"> withdraw</a>
               </div>
               <div class="clearfix"></div>
               <br>

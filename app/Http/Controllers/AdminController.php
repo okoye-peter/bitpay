@@ -79,8 +79,8 @@ class AdminController extends Controller
         $investment->update([
             'status' => $request->action
         ]);
-        // $invest = $investment->user->investment->where('status', 'approve')->sum('amount');
-        // $investment->user()->update(['active_deposit'=>$invest]);
+        $invest = $investment->user->investment->where('status', 'approve')->sum('amount');
+        $investment->user()->update(['active_deposit'=>$invest]);
         return back()->with('success','investment updated successfully');
     }
 

@@ -18,8 +18,7 @@ class CreateInvestmentsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('cascade');
-
-//            $table->string('plane');
+            $table->string('profit_rate');
             $table->string('amount');
             $table->integer('investment_time');
             $table->string('status')->default('pending');
