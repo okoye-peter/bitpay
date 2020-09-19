@@ -90,7 +90,24 @@ class AdminController extends Controller
     }
 
     public function updateWithdraw(Withdraw $withdraw,Request $request){
-        $withdraw->update(['isPaid' => $request->action]);
+        \DB::transaction(function() use ($withdraw, $request){
+            $withdraw->update(['isPaid' => $request->action]);
+            $user = $withdraw->user;
+            $investments = $user->investment->where('status', 'approve')->filter(function ($investment) {
+                return $investment->status == 'approve';
+            });
+
+            $profit_earned = $investments->sum('profit');
+            $withdraw_total = $user->withdraw->sum('amount');
+
+
+            $user->update([
+                'earned_total' => $profit_earned,
+                'withdraw_total' => $withdraw_total
+            ]);
+
+        });
+        
         // $total_withdraw = $withdraw->user->withdraw->where('isPaid', 'approve')->sum('amount');
         // $withdraw->user()->update(['withdraw_total' => $total_withdraw]);
         return back()->with('success','Updated successfully');

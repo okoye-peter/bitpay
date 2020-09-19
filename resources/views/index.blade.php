@@ -26,7 +26,7 @@
 							</div>
 							<div class="row">
 								<div class="col-xs-12 col-sm-4">
-									<a href="{{ asset('assets/certificate.pdf') }}" class="certificateLink" target="__blank"><img
+									<a href="{{ asset('assets/Certificate.jpg') }}" class="certificateLink" target="__blank"><img
 											src="{{ asset('assets/img/certificate.png') }}" alt=""></a>
 								</div>
 								<div class="col-xs-12 col-sm-8">

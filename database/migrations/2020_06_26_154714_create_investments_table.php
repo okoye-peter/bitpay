@@ -21,6 +21,7 @@ class CreateInvestmentsTable extends Migration
             $table->string('profit_rate');
             $table->string('amount');
             $table->integer('investment_time');
+            $table->float('profit', 12, 2);
             $table->string('status')->default('pending');
             $table->timestamps();
         });

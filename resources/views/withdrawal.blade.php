@@ -71,7 +71,7 @@
                           <tr>
                           
                             <td style="color: white;"><input type="radio" value="{{$investment->id}}" name="withdraw"></td>
-                            <td style="color: white;"><img src="{{ asset('assets/img/capital-finance.uk withdrawal_files/1000.gif') }}" width="44"
+                            <td style="color: red;"><img src="{{ asset('assets/img/capital-finance.uk withdrawal_files/1000.gif') }}" width="44"
                                 height="17" align="absmiddle"> Bitcoin</td>
                                 @php
                                   $a = (int)$investment->amount + (((int)$investment->profit_rate / 100) * (int)$investment->amount);

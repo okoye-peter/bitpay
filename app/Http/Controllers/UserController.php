@@ -40,7 +40,7 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        $user = Auth::user();        
+        $user = Auth::user();
         return view('user_dashboard', compact('user'));
     }
 
@@ -67,13 +67,17 @@ class UserController extends Controller
         $investment = Investment::find($request->withdraw);
         $dateCreated =  Carbon::parse($investment->updated_at);
         $dateCreated->addHours($investment->investment_time);
-        $dateDiff = Carbon::now()->diff($dateCreated, false);
-        if ($investment->withdraw->isEmpty() && $dateDiff->invert === 1) {
+        $dateDiff = Carbon::now()->diff($dateCreated);
+        if ($investment->withdraw->isEmpty() && $dateDiff->invert == 1) {
+            
             $withdraw   =   Withdraw::create([
                 'user_id' => request()->user()->id,
                 'amount' => ($investment->amount + (((int)$investment->profit_rate / 100) * (int)$investment->amount))
             ]);
             $investment->withdraw()->attach($withdraw);
+            return back()->with('success', 'request has been received');
+        }
+        if ($investment->withdraw->first()->isPaid =='pending' && $dateDiff->invert == 1) {
             return back()->with('success', 'request has been received');
         }
         return back()->withErrors(['error' => 'Oops!, sorry Investment Time hasn\'t elapsed']);
@@ -93,12 +97,14 @@ class UserController extends Controller
         ]);
 
         $plans = ['120' => 12, '50' => 24, '150' => 24, '350' => 48, '500' => 72];
+        $profit = (((int)$request->amount * (int)$request->plan) / 100);
         
         Investment::create([
             'user_id' => \request()->user()->id,
             'investment_time' => $plans[$request->plan],
             'profit_rate' => $request->plan,
             'amount' => $request->amount,
+            'profit' => $profit,
             'created_at' => Carbon::now()
         ]);
 
