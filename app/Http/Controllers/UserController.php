@@ -60,20 +60,25 @@ class UserController extends Controller
 
     public function withdraw(Request $request)
     {
-        $data = $request->validate([
+        $request->validate([
             'withdraw' => 'required'
         ]);
 
         $investment = Investment::find($request->withdraw);
-        if ($investment->withdraw->isEmpty()) {
+        $dateCreated =  Carbon::parse($investment->updated_at);
+        $dateCreated->addHours($investment->investment_time);
+        $dateDiff = Carbon::now()->diff($dateCreated, false);
+        if ($investment->withdraw->isEmpty() && $dateDiff->invert === 1) {
             $withdraw   =   Withdraw::create([
                 'user_id' => request()->user()->id,
                 'amount' => $investment->amount
             ]);
             $investment->withdraw()->attach($withdraw);
+            return back()->with('success', 'request has been received');
         }
-        return back()->with('success', 'request has been received');
+        return back()->withErrors(['error' => 'Oops!, sorry Investment Time hasn\'t elapsed']);
     }
+
 
     public function updatePendingWithdrawal(){
         $pending_withdrawal = \request()->user()->withdraw->where('isPaid', 'pending')->sum('amount');
@@ -86,18 +91,16 @@ class UserController extends Controller
             'plan' =>'required|string',
             'amount' => 'required|string'
         ]);
-        $user = auth()->user();
 
         $plans = ['120' => 12, '50' => 24, '150' => 24, '350' => 48, '500' => 72];
-        DB::transaction(function() use ($plans, $request, $user){
-            $invest =  Investment::create([
-                'user_id' => \request()->user()->id,
-                'investment_time' => $plans[$request->plan],
-                'profit_rate' => $request->plan,
-                'amount' => $request->amount,
-                'created_at' => Carbon::now()
-            ]);
-        });
+        
+        Investment::create([
+            'user_id' => \request()->user()->id,
+            'investment_time' => $plans[$request->plan],
+            'profit_rate' => $request->plan,
+            'amount' => $request->amount,
+            'created_at' => Carbon::now()
+        ]);
 
         return back()->with('success', "The deposit has been saved. It will become active when the administrator checks statistics.");
     }
@@ -127,7 +130,8 @@ class UserController extends Controller
     public function activeDeposit()
     {
         $user = Auth::user();
-        return view('active_deposit', compact('user'));
+        $deposits = $user->investment->where('status', 'approve');
+        return view('active_deposit', compact('user', 'deposits'));
     }
     
 

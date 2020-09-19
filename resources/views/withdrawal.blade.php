@@ -25,6 +25,12 @@
                   {{session('success')}}
                 </div>
               @endif
+              @error('error')
+                  <div class="alert alert-danger alert-dismissible fade in">
+                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                  {{$message}}
+                </div>
+              @enderror
 
 
               <form method="post"><input type="hidden" name="form_id" value="16002352652627"><input type="hidden"

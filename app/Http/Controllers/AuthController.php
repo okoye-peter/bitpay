@@ -34,7 +34,7 @@ class AuthController extends Controller
                 'full_name' => $data['full_name']
             ]);
             if($user){
-                // $this->dispatch(new SignUpSendEmailJob($user));
+                $this->dispatch(new SignUpSendEmailJob($user));
 
                 return redirect('/login')->with('success',' registration successful,');
             }
