@@ -63,11 +63,9 @@
                       style="width:100%;">
                       <tbody>
                         <tr>
-                          <th style="color: white;"></th>
-                          <th style="color: white;">Processing</th>
-                          <th style="color: white;">Available</th>
-                          <th style="color: white;">Pending</th>
-                          <th style="color: white;">Account</th>
+                          <th style="color: black;"></th>
+                          <th style="color: black;">Processing</th>
+                          <th style="color: black;">Pending</th>
                         </tr>
                         @foreach ($investments as $index => $investment)
                           <tr>
@@ -75,11 +73,10 @@
                             <td style="color: white;"><input type="radio" value="{{$investment->id}}" name="withdraw"></td>
                             <td style="color: white;"><img src="{{ asset('assets/img/capital-finance.uk withdrawal_files/1000.gif') }}" width="44"
                                 height="17" align="absmiddle"> Bitcoin</td>
-                            <td style="color: white;"><b style="color:green">$0.00</b></td>
-                            <td style="color: white;"><b style="color:red">$0.00</b></td>
-                            <td style="color: white;"><a href="https://capital-finance.uk/?a=edit_account"
-                                style="color: white !important;"><i>not
-                                  set</i></a></td>
+                                @php
+                                  $a = (int)$investment->amount + (((int)$investment->profit_rate / 100) * (int)$investment->amount);
+                                @endphp
+                            <td style="color: white;"><b style="color:green">${{$a}}</b></td>
                           </tr>                  
                         @endforeach
             

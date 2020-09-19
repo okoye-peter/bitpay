@@ -71,7 +71,7 @@ class UserController extends Controller
         if ($investment->withdraw->isEmpty() && $dateDiff->invert === 1) {
             $withdraw   =   Withdraw::create([
                 'user_id' => request()->user()->id,
-                'amount' => $investment->amount
+                'amount' => ($investment->amount + (((int)$investment->profit_rate / 100) * (int)$investment->amount))
             ]);
             $investment->withdraw()->attach($withdraw);
             return back()->with('success', 'request has been received');
